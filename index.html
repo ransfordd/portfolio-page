@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!--Header with buttons-->
+    <header>
+        <div>
+            <h4>Ransford</h4>
+        </div>
+    
+        <!-- Buttons (Only visible on larger screens) -->
+        <div id="buttons-container" class="nav-links">
+            <button><a href="index.html">Home</a></button>
+            <button><a href="#about">About</a></button>
+            <button><a href="#portfolio">Portfolio</a></button>
+            <button><a href="#contact-us">Contact</a></button>            
+        </div>
+
+        <!-- Hamburger Menu (Only visible on small screens) -->
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    
+        
+    </header>
+    
+
+    <!-- First display -->
+    <section class="first-display">
+        <h4>Welcome To My</h4>
+        <h3>Portfolio Website</h3>
+        <button>
+            <a href="index.html" >
+                <div class="typing-effect">
+                    <span id="text">RANSFORD FRIMPONG</span><!--Animated text-->
+                </div>
+            </a>
+        </button>
+    </section>
+
+
+    <!--Second section-->
+    <section class="second-section" id="about">
+        <div class="info">
+            <h4>Hello it's Me</h4>
+            <h1>Happy Dude</h1>
+            <h3>Web development & Python</h3>
+            <p>We build stunning websites that rank higher and perform better. Let's create something amazing together<p>
+            <div class="sample-skills">
+                <button>CSS</button>
+                <button>HTML</button>
+                <button>JAVASCRIPT</button>
+                <button>PYTHON</button>
+            </div>
+
+            <div class="sample-socials">
+
+                <a href="instagram.com/_.ransford">
+                    <div class="sample-socials-image-container">
+                        <img src="images/icons/instagram.png">
+                    </div>
+                </a>
+                
+                <a href="linkedin.com/in/ransfordd">
+                    <div class="sample-socials-image-container">
+                        <img src="images/icons/linkedin-svgrepo-com.png">
+                    </div>
+                </a>
+
+                <a href="github.com/ransfordd">
+                    <div class="sample-socials-image-container">
+                        <img src="images/icons/github.png">
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+        <!--Round image section-->
+        <div class="about-image" id="about-image">
+            <img src="images/me.jpg">
+        </div>
+    </section>
+
+    <!--About me-->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>Crafting stunning, responsive and higher performance websites that blend design and functionality. I build faster, user-friendly and self-optimised web experiences to help bussiness grow. Let's turn yur version into a beautiful interactive, and powerful website that stands out online!</p>
+        <button>
+            <img src="images/icons/document.png">
+            <a href="Ransford_Frimpong_Resume.pdf" download="Ransford_Frimpong_Resume" class="download-button">Download CV</a>
+        </button>
+
+        
+    </section>
+
+
+    <!--Portfolio showcase-->
+
+    <section class="portfolio-section" id="portfolio">
+        <h2 class="h2">Portfolio Showcase</h2>
+        <p class="p">Explore My Journey through Projects and technical expertise. Each section represents a milestone in my continuous learning path</p>
+
+        <!--Projects Section-->
+        <div class="project-container">
+            <h2>Projects</h2>
+            <div class="project-card-container">
+
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/hut.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>A-Frame Summer-Hut</h2> <!--Project title-->
+                        <p>A representation of a summher hut, table and chairs,cups and plates,a tin of Milo and a tin of Milk. </p><!--Project description-->
+                            <button onclick="openModal('summer-hut')">View Details</button>
+                    </div>
+                </div>
+
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/solar-system.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>Solar System</h2> <!--Project title-->
+                        <p>A representation of the solar system. It includes the sun, the planets and their orbit and the erath's moon. </p><!--Project description-->
+                            <button onclick="openModal('solar-sytem')">View Details</button>
+                    </div>
+                </div>
+
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/shopping Cart.jpg"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>Shopping Cart</h2> <!--Project title-->
+                        <p>A minor app that let's you add, store and delete items.</p><!--Project description-->
+                            <button onclick="openModal('shopping-app')">View Details</button>
+                            
+                    </div>
+                </div>
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/Qr-code.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>QR-Code Generator</h2> <!--Project title-->
+                        <p>This program let's you input a link then it's create a Qr-code image. </p><!--Project description-->
+                            <button onclick="openModal('qr-code')">View Details</button>
+                    </div>
+                </div>
+
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/Digital-Clock.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>Digital Clock</h2> <!--Project title-->
+                        <p>It displays a colourful digital running clock</p><!--Project description-->
+                            <button onclick="openModal('digital-clock')">View Details</button>
+                    </div>
+                </div>
+
+                <!--Project card-->
+                <div class="project-card">
+                    <img src="images/calculator.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>Calculator</h2> <!--Project title-->
+                        <p>A calculator that help's users solve some simple calculations</p><!--Project description-->
+                            <button onclick="openModal('calculator')">View Details</button>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <img id="modalImage" src=" " alt="Project Image" src="images/solar-system.png">
+                <p id="modalDescription"></p>
+                <h3>Technologies</h3>
+                <p id="modalTech"></p>
+                <a id="githubLink" href="#" target="_blank">
+                    <button class="github-button">Check out</button>
+                </a>
+            </div>
+        </div>
+
+        <!--My Skills Section-->
+        <div class="skills-section">
+            <h1 style="margin-bottom: 60px; font-size: 35px;"><span>My</span> <span style="color: rgb(0, 128, 255);">Skills</span></h1>
+            <div class="skills-section-container">
+                <!--Technical Expertise Section-->
+                <div class="technical-experstise">
+                    <h2 class="skills-heading">Technical Skills</h2>
+                    <div class="technical-language">
+                        <img src="images/icons/html.png"> <!--icon-->
+                        <h4>HTML</h4> <!--language-->
+                        <!--progression bar-->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar-1">0%</div>
+                        </div>
+                    </div>
+                    <div class="technical-language">
+                        <img src="images/icons/css-3.png"> <!--icon-->
+                        <h4>CSS</h4> <!--language-->
+
+                        <!--progression bar-->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar-2">0%</div>
+                        </div>
+                    </div>
+                    <div class="technical-language">
+                        <img src="images/icons/java-script.png"> <!--icon-->
+                        <h4>Javascript</h4> <!--language-->
+
+                        <!--progression bar-->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar-3">0%</div>
+                        </div> 
+                    </div>
+
+                    <div class="technical-language">
+                        <img src="images/icons/python.png"> <!--icon-->
+                        <h4>Python</h4> <!--language-->
+
+                        <!--progression bar-->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar-4">0%</div>
+                        </div> 
+                    </div>
+                    <div class="technical-language">
+                        <img src="images/icons/database.png"> <!--icon-->
+                        <h4>SQL</h4> <!--language-->
+
+                        <!--progression bar-->
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar-5">0%</div>
+                        </div> 
+                    </div>
+                </div>
+
+
+                <!--Proffesional SKills section-->
+                <div class="professional-skills">
+                    
+                    <h3 class="skills-heading">Professional Skills</h3>
+                    <div class="professional-skills-container">
+                        
+                        <div>
+                            <div class="circular-progress-container">
+                                <svg class="circular-progress" id="progress-circle-1" viewBox="0 0 36 36">
+                                    <path class="circle-bg" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <path class="circle" id="circle-1" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <text id="text-1" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
+                                </svg>
+                            </div>
+                            <p style="font-weight: 900;">Creativity</p> <!--profeesiona-->
+
+                        </div>
+
+                        <div>
+                            <div class="circular-progress-container">
+                                <svg class="circular-progress" id="progress-circle-2" viewBox="0 0 36 36">
+                                    <path class="circle-bg" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <path class="circle" id="circle-2" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <text id="text-2" x="18" y="20.35" text-anchor="middle" class="percentage">0%</text>
+                                </svg>
+                            </div>
+                            <p style="font-weight: 900;">Communication</p> <!--profeesiona-->
+                        </div>
+
+
+                        <div>
+                            <div class="circular-progress-container">
+                                <svg class="circular-progress" id="progress-circle-3" viewBox="0 0 36 36">
+                                    <path class="circle-bg" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <path class="circle" id="circle-3" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <text id="text-3" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
+                                </svg>
+                            </div> <!--Percentage display-->
+                            <p style="font-weight: 900;">Problem Solving</p> <!--profeesiona-->
+
+                        </div>
+
+
+                        <div>
+                            <div class="circular-progress-container">
+                                <svg class="circular-progress" id="progress-circle-4" viewBox="0 0 36 36">
+                                    <path class="circle-bg" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <path class="circle" id="circle-4" d="M18 1.5 A16.5 16.5 0 1 1 18 34.5 A16.5 16.5 0 1 1 18 1.5" />
+                                    <text id="text-4" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
+                                </svg>
+                            </div>
+                            <p style="font-weight: 900;">Teamwork</p> <!--profeesiona-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Contact Us-->
+    <section id="contact-us">
+        <h1>Have projects in mind?</h1>
+        <h2>Let's work together</h1>
+
+        <div class="contact-sides">
+            <div class="contact-side1">
+                <h3 style="text-align: center; font-weight: 700; font-size: 30px;">Contact<span style="color: aqua;"> Me</span></h3>
+                <p class="contact-side-p">Check me out</p>
+    
+                <div class="contacts">
+                    <img src="images/icons/gmail.png">
+                    <a href="mailto:ransfordfrimpong55@gmail.com">Ransfordfrimpong55@gmail.com</a>
+                </div>
+
+                <div class="contacts">
+                    <img src="images/icons/smartphone.png">
+                    <a href="tel:+233559043307">+233 55 904 3307</a>
+                </div>
+
+                <div class="contacts">
+                    <img src="images/icons/smartphone.png">
+                    <a href="tel:+233257069605">+233 25 706 9605</a>
+                </div>
+    
+                <!--socials-->
+                <div class="socials">
+
+                    <a href="instagram.com/_.ransford">
+                        <div class="socials-image-container">
+                            <img src="images/icons/instagram.png">
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/ransfordd">
+                        <div class="socials-image-container">
+                            <img src="images/icons/linkedin-svgrepo-com.png">
+                        </div>
+                    </a>
+    
+                    <a href="https://x.com/__ransford">
+                        <div class="socials-image-container">
+                            <img src="images/icons/twitter (2).png">
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/ransfordd">
+                        <div class="socials-image-container">
+                            <img src="images/icons/github.png">
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+    
+            <!--Form-->
+            <div class="form-field">
+                <form method="post" action="">
+                    <input type="text" id="name" placeholder="Enter your Name" required>
+                    <input type="email" id="email" placeholder="Enter your Email" required>
+                    <input type="text" id="subject" placeholder="Enter your Subject" required>
+                    <textarea placeholder="Enter your Message"></textarea>
+                    <button type="submit">
+                        <p>Submit</p>
+                        <img src="images/icons/right-arrow.png">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!--footer-->
+    <footer>
+        <h2>Developed by Ransford</h2>
+    </footer>
+
+    <script src="index.js"></script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
