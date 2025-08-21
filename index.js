@@ -1,3 +1,4 @@
+// Hamburger menu toggle for mobile navigation
 document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav-links");
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Existing function for linear progress bars
+// Animate linear progress bars for skills
 function startProgress(barId, targetWidth) {
     let progressBar = document.getElementById(barId);
     let width = 0;
@@ -22,10 +23,10 @@ function startProgress(barId, targetWidth) {
             progressBar.style.width = width + '%'; // Update width
             progressBar.textContent = width + '%'; // Update text
         }
-    }, 100);
+    }, 20);
 }
 
-// New function for circular progress bars
+// Animate circular progress bars for skills
 function setProgress(circleId, textId, percentage) {
     const circle = document.getElementById(circleId);
     const text = document.getElementById(textId);
@@ -58,7 +59,7 @@ function setProgress(circleId, textId, percentage) {
     }, intervalTime);
 }
 
-// Functions to start animations
+// Start all skills animations
 function startSkillsAnimation() {
     startProgress('progress-bar-1', 85);
     startProgress('progress-bar-2', 75);
@@ -75,6 +76,7 @@ function startSkillsAnimation() {
     setProgress('circle-8', 'text-8', 80);
 }
 
+// Start typing animation for hero section
 function startTypingAnimation() {
     const typingText = document.getElementById('text');
     if (typingText) {
@@ -82,6 +84,7 @@ function startTypingAnimation() {
     }
 }
 
+// Animate about image and text on scroll
 function startImageSliderAnimation() {
     // Animate the image
     const image = document.querySelector('.about-image');
@@ -96,68 +99,66 @@ function startImageSliderAnimation() {
     }
 }
 
-// Observe skills section
-const skillsSection = document.querySelector('.skills-section');
-if (skillsSection) {
-    const skillsObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startSkillsAnimation();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    skillsObserver.observe(skillsSection);
-}
+// Intersection Observer for skills section animation (reloads progress and circular bars on scroll)
+// const skillsSection = document.querySelector('.skills-section');
+// if (skillsSection) {
+//     const skillsObserver = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 startSkillsAnimation();
+//             }
+//         });
+//     }, { threshold: 0.5 });
+//     skillsObserver.observe(skillsSection);
+// }
 
-// Observe typing effect
+// Intersection Observer for typing effect
 const typingSection = document.querySelector('.first-display');
 if (typingSection) {
-    const typingObserver = new IntersectionObserver((entries, observer) => {
+    const typingObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 startTypingAnimation();
-                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
     typingObserver.observe(typingSection);
 }
 
-// Observe second section (image slider and info)
+// Intersection Observer for about image and section animation
 const secondSection = document.querySelector('.second-section');
 if (secondSection) {
-    const secondSectionObserver = new IntersectionObserver((entries, observer) => {
+    const secondSectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Add animation class to the image
                 const image = document.querySelector('.about-image');
                 if (image) {
                     image.classList.add('animate-slide-in');
+                    // Remove and re-add to retrigger animation
+                    setTimeout(() => image.classList.remove('animate-slide-in'), 1000);
                 }
                 
                 // Add animation class to the About Me section
                 const aboutSection = document.querySelector('.about');
                 if (aboutSection) {
                     aboutSection.classList.add('animate-slide-in');
+                    setTimeout(() => aboutSection.classList.remove('animate-slide-in'), 1000);
                 }
-                
-                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.5 });
     secondSectionObserver.observe(secondSection);
 }
 
-// Observe about me section
+// Intersection Observer for about me section animation
 const aboutMeSection = document.querySelector('.about');
 if (aboutMeSection) {
-    const aboutMeObserver = new IntersectionObserver((entries, observer) => {
+    const aboutMeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add animation class to trigger the slide-in effect
                 aboutMeSection.classList.add('animate-slide-in');
-                observer.unobserve(entry.target);
+                setTimeout(() => aboutMeSection.classList.remove('animate-slide-in'), 1000);
             }
         });
     }, { threshold: 0.5 });
@@ -167,115 +168,147 @@ if (aboutMeSection) {
 // Animate project cards on scroll with staggered effect
 const projectCards = document.querySelectorAll('.project-card');
 if (projectCards.length > 0) {
-    const cardObserver = new IntersectionObserver((entries, observer) => {
+    const cardObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, idx) => {
             if (entry.isIntersecting) {
-                // Stagger effect using setTimeout
                 setTimeout(() => {
                     entry.target.classList.add('animate-card-in');
+                    setTimeout(() => entry.target.classList.remove('animate-card-in'), 1000);
                 }, idx * 120);
-                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
     projectCards.forEach(card => cardObserver.observe(card));
 }
 
+// Project data and modal logic
 document.addEventListener("DOMContentLoaded", function () {
+    // Project details: some use video, some use image
     const projects = {
-
-        "summer-hut": {
-            title: "A Summer hut",
-            image: "images/hut.png",
-            description: "A representation of a summher hut, table and chairs,cups and plates,a tin of Milo and a tin of Milk. ",
-            tech: "HTML, JavaScript",
-            github: "https://4102010423.ceiscy.com/"
+        house: {
+            title: "House",
+            description: "A visual representation of a full house with car, summer hut, pool, bedrooms, kitchen etc",
+            tech: "HTML, CSS, JS",
+            demo: "https://4102010423.ceiscy.com/home",
+            video: "videos/house.mp4" // Video preview
         },
-
-        "solar-sytem": {
-            title: "Solar System",
-            image: "images/solar-system.png",
-            description: "A virtual representation of the solar system. It includes the sun, the planets and their orbit and the erath's moon.",
+        "summer-hut": {
+            title: "A-Frame Summer-Hut",
+            description: "A representation of a summer hut, table and chairs, cups and plates, a tin of Milo and a tin of Milk.",
             tech: "HTML, JavaScript",
-            github: "https://4102010423.ceiscy.com/solar-system/"
+            demo: "https://4102010423.ceiscy.com/",
+            video: "videos/hut.mp4" // Video preview
+        },
+        "solar-system": {
+            title: "Solar System",
+            description: "A representation of the solar system. It includes the sun, the planets and their orbit and the earth's moon.",
+            tech: "HTML, JavaScript",
+            demo: "https://4102010423.ceiscy.com/solar-system/",
+            video: "videos/solar-system.mp4"
         },
         "shopping-app": {
-            
-            title: "Shopping App",
-            image: "images/shopping Cart.jpg",
-            description: "A minor app that let's you add, store and delete items.",
-            tech: "HTML, CSS , MySQL, JavaScript",
-            github: "https://add-to-cart-ransfordd.netlify.app/"
+            title: "Shopping Cart",
+            description: "A minor app that lets you add, store and delete items.",
+            tech: "HTML, CSS, MySQL, JavaScript",
+            demo: "https://add-to-cart-ransfordd.netlify.app/",
+            image: "images/shopping Cart.jpg" // Image preview
         },
         "qr-code": {
             title: "QR-Code Generator",
-            image: "images/Qr-code.png",
-            description: "This program let's you input a link then it's create a Qr-code image. ",
-            tech: "HTML, JavaScript and CSS",
-            github: "https://github.com/ransfordd/Qr-Code-Generater"
+            description: "This program lets you input a link then it creates a QR-code image.",
+            tech: "HTML, JavaScript, CSS",
+            github: "https://github.com/ransfordd/Qr-Code-Generater",
+            image: "images/Qr-code.png" // Image preview
         },
-
         "digital-clock": {
             title: "Digital Clock",
-            image: "images/Digital-clock.png",
             description: "It displays a colourful digital running clock.",
-            tech: "HTML, JavaScript and CSS",
-            github: "https://github.com/ransfordd/Digital-clock"
+            tech: "HTML, JavaScript, CSS",
+            github: "https://github.com/ransfordd/Digital-clock",
+            image: "images/Digital-Clock.png" // Image preview
         },
         "calculator": {
             title: "Calculator",
-            image: "images/calculator.png",
-            description: "A calculator that help's users solve some simple calculations.",
-            tech: "HTML and CSS",
-            github: "https://github.com/ransfordd/caculator-2"
+            description: "A calculator that helps users solve some simple calculations.",
+            tech: "HTML, CSS",
+            github: "https://github.com/ransfordd/caculator-2",
+            image: "images/calculator.png" // Image preview
         },
         "password-protected-door-system": {
             title: "Password-protected door system",
-            image: "images/password-protected door system.png",
             description: "This project simulates a security system where a user must enter a predefined password using a keypad. The entered input is shown on an LCD display, and the system reacts.",
-            tech: "Arduino and C++",
-            github: "https://github.com/ransfordd/Password-protected-door-system"
+            tech: "Arduino, C++",
+            demo: "https://www.tinkercad.com/things/eitdGT4vDcI-password-protected-door-system",
+            image: "images/password-protected door system.png" // Image preview
         },
         "pedestrian-traffic-light-system": {
             title: "Pedestrian Traffic Light System",
-            image: "images/Pedestrian Traffic Light System.png",
             description: "The system operates in a repeating loop that mimics the functioning of real-world traffic lights.",
-            tech: "Arduino and C++",
-            github: "https://github.com/ransfordd/Pedestrian-Traffic-Light-System"
+            tech: "Arduino, C++",
+            demo: "https://www.tinkercad.com/things/fEfC5dbP11Q-led-and-lcd-display",
+            image: "images/Pedestrian Traffic Light System.png" // Image preview
         }
     };
 
-    
+    // Open modal and display project details (video or image)
     window.openModal = function (projectKey) {
         const modal = document.getElementById("projectModal");
+        const project = projects[projectKey];
 
-        if (projects[projectKey]) {
-            document.getElementById("modalTitle").innerText = projects[projectKey].title;
-            document.getElementById("modalImage").src = projects[projectKey].image;
-            document.getElementById("modalDescription").innerText = projects[projectKey].description;
-            document.getElementById("modalTech").innerText = projects[projectKey].tech;
-            document.getElementById("githubLink").href = projects[projectKey].github;
+        if (project) {
+            document.getElementById("modalTitle").innerText = project.title;
+            document.getElementById("modalDescription").innerText = project.description;
+            document.getElementById("modalTech").innerText = project.tech;
+            document.getElementById("githubLink").href = project.demo || project.github;
 
-            modal.style.display = "flex"; 
+            // Show video if available, else show image
+            const modalVideo = document.getElementById("modalVideo");
+            const modalVideoSource = document.getElementById("modalVideoSource");
+            const modalImage = document.getElementById("modalImage");
+
+            if (project.video) {
+                modalVideo.style.display = "block";
+                modalImage.style.display = "none";
+                modalVideoSource.src = project.video;
+                modalVideo.muted = true;
+                modalVideo.removeAttribute("controls");
+                modalVideo.loop = true;
+                modalVideo.load();
+                modalVideo.play();
+            } else if (project.image) {
+                modalVideo.style.display = "none";
+                modalImage.style.display = "block";
+                modalImage.src = project.image;
+            } else {
+                modalVideo.style.display = "none";
+                modalImage.style.display = "none";
+            }
+
+            modal.style.display = "flex";
         }
     };
-    
 
-  
+    // Close modal and pause video if open
     window.closeModal = function () {
         document.getElementById("projectModal").style.display = "none";
+        // Pause video when closing modal
+        const modalVideo = document.getElementById("modalVideo");
+        if (modalVideo) {
+            modalVideo.pause();
+        }
     };
 
-   
+    // Close modal when clicking outside the modal content
     window.onclick = function (event) {
         const modal = document.getElementById("projectModal");
         if (event.target === modal) {
             closeModal();
         }
     };
+
+    // Force skills animation to run (for testing)
+    startSkillsAnimation();
 });
 
-
-
-
-window.onload = type; // Start typing on page load
+// (Unused) Start typing animation on window load
+window.onload = type; //

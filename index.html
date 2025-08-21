@@ -65,19 +65,19 @@
 
             <div class="sample-socials">
 
-                <a href="instagram.com/_.ransford">
+                <a href="https://www.instagram.com/_.ransford" target="_blank" rel="noopener noreferrer">
                     <div class="sample-socials-image-container">
                         <img src="images/icons/instagram.png">
                     </div>
                 </a>
                 
-                <a href="linkedin.com/in/ransfordd">
+                <a href="https://linkedin.com/in/ransfordd" target="_blank" rel="noopener noreferrer">
                     <div class="sample-socials-image-container">
                         <img src="images/icons/linkedin-svgrepo-com.png">
                     </div>
                 </a>
 
-                <a href="github.com/ransfordd">
+                <a href="https://github.com/ransfordd" target="_blank" rel="noopener noreferrer">
                     <div class="sample-socials-image-container">
                         <img src="images/icons/github.png">
                     </div>
@@ -118,10 +118,20 @@
 
                 <!--Project card-->
                 <div class="project-card">
+                    <img src="images/house.png"> <!--The picture of the project-->
+                    <div class="project-card-info">
+                        <h2>House</h2> <!--Project title-->
+                        <p>A visual representation of a full house with car. </p><!--Project description-->
+                            <button onclick="openModal('house')">View Details</button>
+                    </div>
+                </div>
+
+                <!--Project card-->
+                <div class="project-card">
                     <img src="images/hut.png"> <!--The picture of the project-->
                     <div class="project-card-info">
                         <h2>A-Frame Summer-Hut</h2> <!--Project title-->
-                        <p>A representation of a summher hut, table and chairs,cups and plates,a tin of Milo and a tin of Milk. </p><!--Project description-->
+                        <p>A representation of a summer hut, table, chairs, cups, plates,a tin of Milo, and a tin of Milk. </p><!--Project description-->
                             <button onclick="openModal('summer-hut')">View Details</button>
                     </div>
                 </div>
@@ -132,7 +142,7 @@
                     <div class="project-card-info">
                         <h2>Solar System</h2> <!--Project title-->
                         <p>A representation of the solar system. It includes the sun, the planets and their orbit and the erath's moon. </p><!--Project description-->
-                            <button onclick="openModal('solar-sytem')">View Details</button>
+                            <button onclick="openModal('solar-system')">View Details</button>
                     </div>
                 </div>
 
@@ -201,7 +211,7 @@
                 <div class="project-card">
                     <img src="images/Incident Journal.png"> <!--The picture of the project-->
                     <div class="project-card-info">
-                        <h2>Incident Hnadler Journal</h2> <!--Project title-->
+                        <h2>Incident Handler Journal</h2> <!--Project title-->
                         <p>A list of incidents documented</p><!--Project description-->
                             <button>
                                 <a href="Incident-handler-s-journal-Portfolio.pdf" download="Incident-handler-s-journal-Portfolio" class="download-button">Download Journal</a>
@@ -218,12 +228,16 @@
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="modalTitle"></h2>
-                <img id="modalImage" src=" " alt="Project Image" src="images/solar-system.png">
+                <video id="modalVideo" muted playsinline style="width:100%;display:none;">
+                    <source id="modalVideoSource" src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img id="modalImage" src=" " alt="Project Image" style="width:100%;display:none;">
                 <p id="modalDescription"></p>
                 <h3>Technologies</h3>
                 <p id="modalTech"></p>
                 <a id="githubLink" href="#" target="_blank">
-                    <button class="github-button">Check out</button>
+                    <button class="github-button">View Demo</button>
                 </a>
             </div>
         </div>
@@ -298,7 +312,7 @@
                                     <text id="text-1" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div>
-                            <p style="font-weight: 900;">Creativity</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Creativity</p> <!--profeesiona-->
 
                         </div>
 
@@ -310,7 +324,7 @@
                                     <text id="text-2" x="18" y="20.35" text-anchor="middle" class="percentage">0%</text>
                                 </svg>
                             </div>
-                            <p style="font-weight: 900;">Communication</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Communication</p> <!--profeesiona-->
                         </div>
 
 
@@ -322,7 +336,7 @@
                                     <text id="text-3" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div> <!--Percentage display-->
-                            <p style="font-weight: 900;">Problem Solving</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Problem Solving</p> <!--profeesiona-->
 
                         </div>
 
@@ -335,7 +349,7 @@
                                     <text id="text-4" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div>
-                            <p style="font-weight: 900;">Teamwork</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Teamwork</p> <!--profeesiona-->
                         </div>
 
                         <div>
@@ -346,7 +360,7 @@
                                     <text id="text-5" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div> <!--Percentage display-->
-                            <p style="font-weight: 900;">Analytical Thinking</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Analytical Thinking</p> <!--profeesiona-->
 
                         </div>
 
@@ -359,7 +373,7 @@
                                     <text id="text-6" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div>
-                            <p style="font-weight: 900;">Critical Thinking</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Critical Thinking</p> <!--profeesiona-->
                         </div>
 
                         <div>
@@ -370,7 +384,7 @@
                                     <text id="text-7" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div> <!--Percentage display-->
-                            <p style="font-weight: 900;">Attention to Detail</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Attention to Detail</p> <!--profeesiona-->
 
                         </div>
 
@@ -383,7 +397,7 @@
                                     <text id="text-8" x="18" y="20.35" text-anchor="middle" class="percentage" >0%</text>
                                 </svg>
                             </div>
-                            <p style="font-weight: 900;">Continuous Learning</p> <!--profeesiona-->
+                            <p class="prof-skills-title" style="font-weight: 900;">Continuous Learning</p> <!--profeesiona-->
                         </div>
                     </div>
                 </div>
@@ -393,7 +407,7 @@
 
     <!-- Certificates Section -->
     <section class="certificates-section" id="certificates">
-        <h1 style="margin-bottom: 60px; font-size: 35px;"><span>My</span> <span style="color: rgb(0, 128, 255);">Certifications</span></h1>
+        <h1 class="certs" ><span>My</span> <span style="color: rgb(0, 128, 255);">Certifications</span></h1>
         <div class="certificates-container">
             <div class="certificate-card">
                 <div class="certificate-badge">
@@ -401,7 +415,7 @@
                 </div>
                 <h3>Google Cybersecurity Professional Certificate V2</h3>
                 <p class="certificate-issuer">Issued by Google, Coursera</p>
-                <p class="certificate-date">Completed:20th July 2025</p>
+                <p class="certificate-date">Completed: 20th July 2025</p>
                 <a href="https://www.credly.com/badges/83f35155-9e0f-4b62-aded-9a97f3a02568/public_url" target="_blank" class="certificate-link">View Certificate</a>
             </div>
 
@@ -429,7 +443,7 @@
     
                 <div class="contacts">
                     <img src="images/icons/gmail.png">
-                    <a href="mailto:ransfordfrimpong55@gmail.com">Ransfordfrimpong55@gmail.com</a>
+                    <a href="mailto:ransfordfrimpong55@gmail.com">ransfordfrimpong55@gmail.com</a>
                 </div>
 
                 <div class="contacts">
@@ -445,25 +459,25 @@
                 <!--socials-->
                 <div class="socials">
 
-                    <a href="instagram.com/_.ransford">
+                    <a href="https://www.instagram.com/_.ransford" target="_blank" rel="noopener noreferrer">
                         <div class="socials-image-container">
                             <img src="images/icons/instagram.png">
                         </div>
                     </a>
                     
-                    <a href="https://linkedin.com/in/ransfordd">
+                    <a href="https://linkedin.com/in/ransfordd" target="_blank" rel="noopener noreferrer">
                         <div class="socials-image-container">
                             <img src="images/icons/linkedin-svgrepo-com.png">
                         </div>
                     </a>
     
-                    <a href="https://x.com/__ransford">
+                    <a href="https://x.com/__ransford" target="_blank" rel="noopener noreferrer">
                         <div class="socials-image-container">
                             <img src="images/icons/twitter (2).png">
                         </div>
                     </a>
 
-                    <a href="https://github.com/ransfordd">
+                    <a href="https://github.com/ransfordd" target="_blank" rel="noopener noreferrer">
                         <div class="socials-image-container">
                             <img src="images/icons/github.png">
                         </div>
