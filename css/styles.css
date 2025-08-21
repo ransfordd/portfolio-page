@@ -1,3 +1,4 @@
+/* Reset margin and set base font and background for the page */
 html, body {
     margin: 0;
     font-family: sans-serif;
@@ -5,7 +6,9 @@ html, body {
     color: white;
 }
 
-/*Header*/
+/* ================= HEADER ================= */
+
+/* Style the header bar */
 header {
     background-color: rgb(9, 26, 113);
     display: flex;
@@ -22,6 +25,7 @@ header {
     box-shadow: 0px 0px 5px 0.5px rgba(85, 108, 223, 0.591);
 }
 
+/* Navigation links container */
 .nav-links{
     margin-right: 50px;
     width: 100vw;
@@ -29,11 +33,14 @@ header {
     justify-content: right;
 }
 
+/* Hover effect for navigation links */
 .nav-links a:hover{
     color: rgb(221, 227, 250);
     text-decoration: underline;
     text-underline-offset: 7px;
 }
+
+/* Style for header buttons */
 header button {
     background-color: rgb(9, 26, 113);
     border: none;
@@ -43,13 +50,15 @@ header button {
     cursor: pointer;
 }
 
+/* Style for header links */
 header a {
     color: white;
     text-decoration: none;
 }
 
+/* ================= FIRST DISPLAY (HERO) ================= */
 
-/*First display*/
+/* Main hero section */
 .first-display {
     text-align: center;
     height: 500px; 
@@ -61,22 +70,26 @@ header a {
     justify-content: center;
 }
 
+/* Gradient text for hero heading */
 .first-display h3{ 
     background: linear-gradient(90deg, rgb(16, 156, 149) 0%,rgb(18, 167, 209) 50%, rgb(8, 103, 120) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
+/* Font size and margin for hero headings */
 .first-display h3, .first-display h4{
     font-size: 50px;
     margin: -12px 0px;
     font-weight: 900;
 }
 
+/* Color for hero subheading */
 .first-display h4{
     color: white;
 }
 
+/* Style for hero button */
 .first-display button{
     background-color: rgb(8, 103, 120);
     border: 1px solid white;
@@ -87,6 +100,7 @@ header a {
     text-align: center;
 }
 
+/* Typing effect for hero section */
 .typing-effect {
     margin: 0 auto;
     font-family: 'Courier New', Courier, monospace; /* Monospace font for typing effect */
@@ -98,6 +112,7 @@ header a {
     animation: typing 3s steps(10) forwards, blink-caret 0.75s step-end infinite; /* Typing and blinking cursor */
 }
 
+/* Keyframes for typing animation */
 @keyframes typing {
     from {
         width: 0; /* Start with no width */
@@ -107,6 +122,7 @@ header a {
     }
 }
 
+/* Keyframes for blinking caret */
 @keyframes blink-caret {
     from, to {
         border-color: transparent; /* Invisible cursor */
@@ -116,6 +132,7 @@ header a {
     }
 }
 
+/* Style for hero links */
 .first-display a{
     color: white;
     font-size: 18px;
@@ -123,6 +140,9 @@ header a {
     font-weight: 900;
 }
 
+/* ================= SECOND SECTION (ABOUT) ================= */
+
+/* Layout for about section */
 .second-section{
     display: flex;
     justify-content: space-between;
@@ -130,10 +150,13 @@ header a {
     padding: 100px 70px;
 }
 
+/* Info container in about section */
 .info{
     width: 60%;
     animation: slideUp 1s ease-out forwards;
 }
+
+/* Keyframes for sliding up animation */
 @keyframes slideUp {
     0% {
         transform: translateY(100%); /* Start off-screen to the left */
@@ -145,13 +168,14 @@ header a {
     }
 }
 
+/* Gradient text for about section headings */
 .info h1{
     font-size: 60px;
     margin: 0;
     font-weight: 700;
     background: linear-gradient(90deg, rgb(58, 247, 238) 0%,rgb(18, 167, 209) 50%, rgb(2, 58, 69) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 .info h3{
     font-size: 30px;
@@ -170,13 +194,13 @@ header a {
     font-weight: 500;
 }
 
+/* Skills sample buttons in about section */
 .sample-skills{
     margin: 20px 0;
     width: 660px;
     justify-content: space-between;
     display: flex;
 }
-
 .sample-skills button{
     background-color: gray;
     border: none;
@@ -185,12 +209,12 @@ header a {
     padding: 5px 15px;
 }
 
+/* Social icons in about section */
 .sample-socials{
     display: flex;
     width: 120px;
     justify-content: space-between;
 }
-
 .sample-socials-image-container{
     width: 30px;
     height: 30px;
@@ -204,11 +228,9 @@ header a {
     cursor: pointer;
     transition: all 0.2s;
 }
-
 .sample-socials-image-container:hover{  
     box-shadow: 0px 0px 5px 4px rgb(18, 167, 209, 0.678);
 }
-
 .sample-socials-image-container img{
     width: 70%;
     height: 80%;
@@ -217,6 +239,7 @@ header a {
     margin: 0;
 }
 
+/* About image styling */
 .about-image {
     width: 430px; 
     height: 400px;
@@ -232,6 +255,7 @@ header a {
     transform: translateX(0);
 }
 
+/* Keyframes for sliding in about image */
 @keyframes slidesIn {
     0% {
         transform: translateX(100%);
@@ -243,10 +267,12 @@ header a {
     }
 }
 
+/* Animation class for about image */
 .about-image.animate-slide-in {
     animation: slidesIn 1s ease-out forwards;
 }
 
+/* Keyframes for sliding in about section */
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -258,10 +284,12 @@ header a {
     }
 }
 
+/* Animation class for about section */
 .about.animate-slide-in {
     animation: slideIn 1s ease-out forwards;
 }
 
+/* About section container */
 .about {
     transform: translateX(-100%);
     opacity: 0;
@@ -273,6 +301,7 @@ header a {
     text-align: center;
 }
 
+/* About image inner image */
 .about-image img {
     object-fit: cover; 
     width: 100%; 
@@ -283,8 +312,7 @@ header a {
     left: 0; 
 }
 
-
-/*About section*/
+/* About section styling */
 .about{
     padding: 50px 50px;
     border: 1px solid rgba(255, 248, 248, 0.792);
@@ -296,7 +324,7 @@ header a {
     transform: translateX(0);
 }
 
-
+/* Keyframes for sliding up animation (duplicate, but for about section) */
 @keyframes slideUp {
     0% {
         transform: translateY(100%); /* Start off-screen from bottom */
@@ -308,22 +336,23 @@ header a {
     }
 }
 
-
+/* Gradient heading for about section */
 .about h2{
     font-size: 45px;
     margin: 0;
     font-weight: 700;
     background: linear-gradient(90deg, rgb(58, 247, 238) 0%,rgb(18, 167, 209) 50%, rgb(2, 58, 69) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
+/* About section paragraph */
 .about p{
     width: 80%;
     margin: 20px auto;
 }
 
-
+/* About section button */
 .about button{
     background: linear-gradient(90deg, rgb(58, 247, 238) 0%, rgb(2, 58, 69) 100%);
     border: none;
@@ -338,40 +367,49 @@ header a {
     transition: all 0.3s;
 }
 
-
+/* Hover effect for about button */
 .about button:hover{
     box-shadow: 0px 0px 3px 3px rgba(58, 247, 238, 1);
 }
 
+/* About button link */
 .about button a{
     color: black;
     text-decoration: none;
 }
 
+/* About section image */
 .about img{
     width: 14px;
     height: 14px;
     margin-right: 5px;
 }
 
+/* ================= PORTFOLIO SECTION ================= */
+
+/* Portfolio section container */
 .portfolio-section{
     text-align: center;
     padding: 50px 20px;
     margin: 0 auto;
 }
 
-/* Certificates Section */
+/* ================= CERTIFICATES SECTION ================= */
 
+/* Certificates heading */
 .certs{
     font-size: 35px;
     margin-bottom: 60px;
 }
+
+/* Certificates section container */
 .certificates-section {
     text-align: center;
     padding: 50px 20px;
     margin: 0 auto;
 }
 
+/* Certificates cards container */
 .certificates-container {
     display: flex;
     justify-content: center;
@@ -379,6 +417,7 @@ header a {
     padding: 20px;
 }
 
+/* Individual certificate card */
 .certificate-card {
     background: rgba(6, 26, 88, 0.459);
     padding: 30px;
@@ -388,10 +427,12 @@ header a {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for certificate card */
 .certificate-card:hover {
     transform: translateY(-10px);
 }
 
+/* Certificate badge styling */
 .certificate-badge {
     width: 150px;
     height: 150px;
@@ -405,12 +446,14 @@ header a {
     border: 2px solid rgb(18, 167, 209);
 }
 
+/* Certificate badge image */
 .certificate-badge img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
+/* Certificate card heading */
 .certificate-card h3 {
     font-size: 24px;
     margin: 15px 0;
@@ -419,6 +462,7 @@ header a {
     -webkit-text-fill-color: transparent;
 }
 
+/* Certificate issuer and date */
 .certificate-issuer,
 .certificate-date {
     font-size: 16px;
@@ -426,6 +470,7 @@ header a {
     margin: 10px 0;
 }
 
+/* Certificate link button */
 .certificate-link {
     display: inline-block;
     margin-top: 20px;
@@ -439,29 +484,35 @@ header a {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for certificate link */
 .certificate-link:hover {
     box-shadow: 0px 0px 3px 3px rgba(58, 247, 238, 1);
     transform: translateY(-2px);
 }
 
+/* Portfolio section heading */
 .h2{
     font-size: 45px;
     font-weight: 900;
     margin-bottom: 13px;
     background: linear-gradient(90deg, rgb(58, 247, 238) 0%,rgb(18, 167, 209) 50%, rgb(2, 58, 69) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
+/* Portfolio section paragraph */
 .p{
     margin: 0 auto;
     width: 45%;
 }
 
+/* Project cards container */
 .project-container{
     margin: 30px 0px;
     padding: 40px 5px;
 }
+
+/* Project card grid container */
 .project-card-container{
     display: grid;
     margin: 0 auto;
@@ -470,6 +521,7 @@ header a {
     gap: 30px;
 }
 
+/* Individual project card */
 .project-card{
     width: 300px;
     height: 220px;
@@ -477,10 +529,12 @@ header a {
     border-radius: 5px;
 }
 
+/* Hover effect for project card */
 .project-card:hover{
     box-shadow: 0px 0px 5px 4px rgb(18, 167, 209, 0.678);
 }
 
+/* Project card image */
 .project-card img{
     width: 100%;
     height: 100%;
@@ -488,7 +542,7 @@ header a {
     border-radius: 5px;
 }
 
-
+/* Project card info overlay */
 .project-card-info{
     background-color: rgba(6, 26, 88, 0.459);
     position: absolute;
@@ -498,24 +552,26 @@ header a {
     padding: 5px;
     cursor: pointer;
     width: 100%;
-    
 }
 
+/* Hover effect for project card info */
 .project-card-info:hover{
     background-color: rgba(6, 26, 88, 0.685);
     box-shadow: 0px 0px 5px 4px rgba(6, 26, 88, 0.685);
 }
 
+/* Project card info heading */
 .project-card-info h2{
     font-size: 15px;
     margin-bottom: -2px;
 }
 
+/* Project card info paragraph */
 .project-card-info p{
     font-size: 10px;
-    
 }
 
+/* Project card info button */
 .project-card-info button{
     background-color: rgb(58, 247, 238);
     border: none;
@@ -530,19 +586,19 @@ header a {
     margin: 5px auto;
 }
 
-
+/* Hover effect for project card info button */
 .project-card-info button:hover{
     box-shadow: 0px 0px 3px 3px rgba(58, 247, 238, 1);
 }
 
+/* Project card info button link */
 .project-card-info button a{
     text-decoration: none;
 }
 
+/* ================= MODAL ================= */
 
-
-
-/* Modal styling */
+/* Modal overlay */
 .modal {
     display: none;
     position: fixed;
@@ -555,7 +611,7 @@ header a {
     align-items: center;
 }
 
-/* Modal styling */
+/* Modal overlay (duplicate, but with different background) */
 .modal {
     display: none;
     position: fixed;
@@ -570,7 +626,7 @@ header a {
     z-index: 3;
 }
 
-
+/* Modal content box */
 .modal-content {
     background-color: rgb(5, 21, 98);
     padding: 20px;
@@ -584,8 +640,7 @@ header a {
     animation: scaleUp 0.3s ease-in-out;
 }
 
-
-/* Scale-in animation */
+/* Scale-in animation for modal */
 @keyframes scaleUp {
     from {
         transform: scale(0.8);
@@ -597,7 +652,7 @@ header a {
     }
 }
 
-/* Close button */
+/* Close button for modal */
 .close {
     color: rgb(18, 167, 209);
     font-size: 24px;
@@ -608,7 +663,7 @@ header a {
     right: 15px;
 }
 
-/* Image inside modal */
+/* Modal image */
 .modal-content img {
     width: 100%;
     max-height: 200px;
@@ -617,6 +672,7 @@ header a {
     object-fit: contain;
 }
 
+/* Modal demo button */
 .github-button{
     background-color: rgb(58, 247, 238);
     border: none;
@@ -628,50 +684,56 @@ header a {
     margin: 0 auto;
 }
 
-
+/* Hover effect for modal demo button */
 .github-button:hover{
     box-shadow: 0px 0px 3px 3px rgba(58, 247, 238, 1);
 }
 
+/* ================= SKILLS SECTION ================= */
 
-
-/*Skill section of the page*/
-
+/* Skills section container */
 .skills-section{
     padding: 50px 100px;
 }
 
+/* Skills heading */
 .skills-heading{
     text-decoration:5px underline ;
     text-align: center;
 }
+
+/* Skills section flex container */
 .skills-section-container{
     display: flex;
     justify-content: space-between;
 }
+
+/* Technical expertise container */
 .technical-experstise{
     width: 400px;
     text-align: left;
 }
 
+/* Technical language row */
 .technical-language{
     margin: 25px 0;
 }
 
+/* Technical language icon */
 .technical-language img{
     width: 30px;
     height: 30px;
     margin-bottom: 2px;
 }
 
+/* Technical language heading */
 .technical-language h4{
     color: rgb(58, 247, 238);
     margin: 0;
     font-weight: 900;
 }
 
-
-/*Horizontal Progress bar*/
+/* Horizontal progress bar container */
 .progress-container {
     width: 100%; 
     background-color: black;
@@ -681,6 +743,7 @@ header a {
     margin-top: 4px;
 }
 
+/* Horizontal progress bar */
 .progress-bar {
     width: 0%; 
     height: 10px; 
@@ -694,32 +757,33 @@ header a {
     transition: width 0.5s;
 }
 
-
+/* Professional skills grid */
 .professional-skills-container{
     display: grid;
     grid-template-columns: 1fr 1fr ;
     column-gap: 50px;
 }
 
-
-
-/*Circular display of progression*/
+/* Circular progress container */
 .circular-progress-container {
     width: 100px;
     height: 100px;
     margin: 20px auto;
 }
 
+/* Circular progress rotation */
 .circular-progress {
     transform: rotate(0deg);
 }
 
+/* Circular progress background */
 .circle-bg {
     fill: none;
     stroke: black; 
     stroke-width: 2.5; 
 }
 
+/* Circular progress bar */
 .circle {
     fill: none;
     stroke: rgb(58, 247, 238);
@@ -729,68 +793,77 @@ header a {
     transition: stroke-dashoffset 8s ease;
 }
 
+/* Percentage text in circular progress */
 .percentage {
     font-weight: 900;
     font-size: 0.5em; 
     fill: rgb(58, 247, 238); 
 }
 
+/* ================= CONTACT US SECTION ================= */
 
-/*Contact Us section*/
-
+/* Contact us section container */
 #contact-us{
     text-align: center;
     padding: 10px;
 }
 
-
+/* Contact us heading */
 #contact-us h1{
     font-size: 40px;
     font-weight: 700;
     background: linear-gradient(90deg, rgb(246, 246, 246) 0%,rgb(18, 167, 209) 50%, rgb(27, 141, 145) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
+/* Contact us subheading */
 #contact-us h2{
     font-weight: 700;
     font-size: 40px;
     margin-top: -30px;
 }
 
+/* Contact sides flex container */
 .contact-sides{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-
+/* Contact side 1 (info) */
 .contact-side1{
     width: 54%;
     text-align: left;
     padding: 10px 0;
 }
 
+/* Contact info row */
 .contacts{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
 
+/* Contact icon */
 .contacts img{
     height: 30px;
     width: 30px;
     margin-right: 5px;
 }
 
+/* Contact side paragraph */
 .contact-side-p{
     margin-bottom: 15px;
 }
+
+/* Contact link */
 .contacts a{
     text-decoration: none;
     color: white;
 }
 
+/* Social icons row */
 .socials{
     display: flex;
     width: 150px;
@@ -798,6 +871,7 @@ header a {
     margin-top: 20px;
 }
 
+/* Social icon container */
 .socials-image-container{
     width: 30px;
     height: 30px;
@@ -812,12 +886,12 @@ header a {
     cursor: pointer;
 }
 
+/* Hover effect for social icon */
 .socials-image-container:hover{
     box-shadow: 0px 0px 5px 4px rgb(18, 167, 209, 0.678);
 }
 
-
-
+/* Social icon image */
 .socials-image-container img{
     width: 70%;
     height: 80%;
@@ -826,19 +900,21 @@ header a {
     margin: 0;
 }
 
+/* ================= FORM SECTION ================= */
 
-
-/*Form side*/
+/* Form field container */
 .form-field{
     width: 45%;
     padding: 20px;
 }
 
+/* Form layout */
 form{
     display: flex;
     flex-direction: column;
 }
 
+/* Input and textarea styling */
 input, textarea{
     background-color: rgb(177, 177, 177);
     border: none;
@@ -848,17 +924,22 @@ input, textarea{
     outline: none;
 }
 
+/* Remove border for input and textarea */
 input, textarea{
     border: none;
 }
 
+/* Textarea height */
 textarea{
     height: 120px;
 }
+
+/* Input height */
 input{
     height: 20px;
 }
 
+/* Form button styling */
 form button{
     background-color: rgb(58, 247, 238);
     border: none;
@@ -874,30 +955,29 @@ form button{
     align-items: center;
 }
 
+/* Form button text */
 form button p{
     font-weight: 700;
 }
 
+/* Form button icon */
 form button img{
     width: 15px;
     height: 10px;
     margin-left: 3px;
 }
 
+/* ================= FOOTER ================= */
 
-
-
-/*footer*/
+/* Footer styling */
 footer{
     background-color: rgb(5, 21, 98);
     text-align: center;
 }
 
+/* ================= RESPONSIVENESS ================= */
 
-/*   Responsiveness */
-
-
-/*Small screens*/
+/* Small screens (max-width: 400px) */
 @media (max-width: 400px) {
     
 
